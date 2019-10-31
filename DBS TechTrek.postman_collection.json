@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "d1288c3f-da54-42d8-8f74-ea4f45fdfc84",
+		"name": "DBS TechTrek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET customer ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/customers/:{{userName}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customers",
+						":{{userName}}"
+					],
+					"variable": [
+						{
+							"key": "{{userName}}",
+							"value": "limzeyang"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Customer Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/customers/:{{customerId}}/details?",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customers",
+						":{{customerId}}",
+						"details"
+					],
+					"query": [
+						{
+							"key": "identity",
+							"value": "Group4",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "{{customerId}}",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Transaction Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/transactions/:accountId?from=01-01-2018&to=02-01-2019",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"transactions",
+						":accountId"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "01-01-2018"
+						},
+						{
+							"key": "to",
+							"value": "02-01-2019"
+						}
+					],
+					"variable": [
+						{
+							"key": "accountId",
+							"value": "74"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET List of Deposit Accounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/accounts/deposit/:{{customerId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"accounts",
+						"deposit",
+						":{{customerId}}"
+					],
+					"variable": [
+						{
+							"key": "{{customerId}}",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET  Balance of Deposit Account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/accounts/deposit/:accountId/balance?month=1&year=2018",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"accounts",
+						"deposit",
+						":accountId",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "1"
+						},
+						{
+							"key": "year",
+							"value": "2018"
+						}
+					],
+					"variable": [
+						{
+							"key": "accountId",
+							"value": "74"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET List of Credit Accounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/accounts/credit/:customerId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"accounts",
+						"credit",
+						":customerId"
+					],
+					"variable": [
+						{
+							"key": "customerId",
+							"value": "74"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Outstanding Balance of a Credit Account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/accounts/credit/:accountId/balance",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"accounts",
+						"credit",
+						":accountId",
+						"balance"
+					],
+					"variable": [
+						{
+							"key": "accountId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET List of Marketing Messages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/marketing",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"marketing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Details of Marketing Message",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/marketing/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"marketing",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Personal Messages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "identity",
+						"value": "Group4",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "e908711e-8acc-4a4a-b273-9e33395b4cd2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/message/:customerId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						":customerId"
+					],
+					"variable": [
+						{
+							"key": "customerId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

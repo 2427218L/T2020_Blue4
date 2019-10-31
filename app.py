@@ -13,22 +13,21 @@ headers = {
     'token': 'e908711e-8acc-4a4a-b273-9e33395b4cd2'
 }
 
-@app.route('/', methods=['GET'])
-def get_customer():
-    x = Customer("marytan", "2").toJSON()
-    y = Customer("limzeyang", "1").toJSON()
-    cust = {'marytan':y , 'limzeyang':x}
-    return jsonify(cust)
+@app.route('/<userName>', methods=['GET'])
+def get_customer(userName):
+    x = Customer(userName).toJSON()
+    cust = {userName:x}
+    return cust
 
 class Customer():
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__,
-            sort_keys=True, indent=4)
+            sort_keys=True)
 
-    def __init__(self, username, customerid):
+    def __init__(self, username):
         self.username = username
         #print(self.username)
-        self.customerid = customerid
+        self.customerid = int(self.get_customerid()['customerId'])
         #print(self.customerid)
         self.account_number = self.dept_account()
         #print("ACCT")
@@ -48,7 +47,8 @@ class Customer():
 
     # getting back customerid
     def get_customerid(self):
-        return self.customerid
+        response = requests.get("http://techtrek-api-gateway.ap-southeast-1.elasticbeanstalk.com/customers/{}".format(self.username), headers=headers).json()
+        return response
 
     # getting back the username
     def get_username(self):
